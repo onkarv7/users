@@ -1,0 +1,45 @@
+.search {
+    display: flex;
+    width: 700px;
+    position: relative;
+    left: 350px;
+    margin: 15px;
+}
+
+
+.pagination {
+    position: relative;
+    top: 7px;
+    left: 1220px;
+    justify-content: center;
+    padding: 5px 10px;
+}
+
+
+/* .maintenance {
+    background-color: orange;
+    color: white;
+    padding: 0.3em 0.5em;
+    margin: 0.5em;
+    display: flex;
+    text-decoration: none;
+    border-radius: 2em;
+    font-weight: bolder;
+    justify-content: center;
+} */
+
+
+
+@media screen and (max-width: 768px) {
+    .search {
+
+        width: 400px;
+        position: relative;
+        left: 50px;
+        margin: 5px;
+    }
+
+    .pagination {
+        left: 220px;
+    }
+}
