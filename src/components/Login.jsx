@@ -10,14 +10,41 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email === "test@test.com" && password === "password") {
-      navigate("/orders");
-      console.log("details");
-    } else {
-      setError("Invalid email or password");
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (email === "test@test.com" && password === "password") {
+  //     navigate("/orders");
+  //     console.log("details");
+  //   } else {
+  //     setError("Invalid email or password");
+  //   }
+  // };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Regular expression for password validation
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
     }
+
+    if (!passwordRegex.test(password)) {
+      setError(
+        "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
+      );
+      return;
+    }
+
+    navigate("/orders");
+
+    // If validation passes, submit the form
+    // ...
   };
 
   return (
